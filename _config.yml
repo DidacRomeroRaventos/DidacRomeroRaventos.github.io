@@ -2,42 +2,37 @@ url: https://DidacRomeroRaventos.github.io
 baseurl: ""
 
 # Site settings
-title: Personal Projects
+title: "Dídac Romero | Aerospace Engineer"
 email: didacrora@gmail.com
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+description: "Aerospace Engineer with comprehensive knowledge in aerodynamics, structures, propulsion, flight control, and materials."
 
-
-# Team names, titles and social links
+# --- EL TEU PERFIL (SECCIÓ TEAM) ---
+# He eliminat la gent falsa (Kay, Larry) i t'he posat a tu sol.
 people:
 - name: Dídac Romero Raventós
   pic: 1
-  position: Aerospace Engineer
+  position: Aerospace Engineer & Researcher
   social:
-    - title: twitter
-      url: #
-    - title: facebook
-      url: #
-    - title: stack-overflow
-      url: #
+    - title: linkedin
+      url: https://www.linkedin.com/in/didacromero/
+    - title: github
+      url: https://github.com/POSA-EL-TEU-USUARI
+    - title: email
+      url: mailto:didacrora@gmail.com
 
-# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+# --- XARXES SOCIALS (PEU DE PÀGINA) ---
 social:
-  - title: twitter
-    url: http://twitter.com/jekyllrb
-  - title: facebook
-    url:
-  - title: stack-overflow
-    url: http://stackoverflow.com/questions/tagged/jekyll
-  - title: bitbucket 
-    url: http://bitbucket.org/jekyll
+  - title: linkedin
+    url: https://www.linkedin.com/in/didacromero/
   - title: github
-    url: http://github.com/jekyll
+    url: https://github.com/POSA-EL-TEU-USUARI
+  # He eliminat xarxes que no surten al CV (Twitter, Facebook) per netejar.
 
-# Postal address (add as many lines as necessary)
+# --- ADREÇA (SI VOLS QUE SURTI AL MAPA/FOOTER) ---
 address:
-  - line: 3481 Melrose Place
-  - line: Beverly Hills, CA 90210
+  - line: Barcelona, Spain
+  - line: didacrora@gmail.com
 
-# Build settings
+# --- CONFIGURACIÓ TÈCNICA (NO TOCAR) ---
 markdown: kramdown
 permalink: pretty

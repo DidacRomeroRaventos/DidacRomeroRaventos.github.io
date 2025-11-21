@@ -1,20 +1,194 @@
 ---
 layout: default
+title: Dídac Romero Portfolio
+# --- CAPÇALERA ---
+header:
+  title: Dídac Romero
+  text: Aerospace Engineer & Researcher
+  text_color: white
+  button: Tell Me More
+  button_link: "#services"
+
+# --- SECCIÓ 1: HABILITATS TÈCNIQUES (Abans Services) ---
+services:
+  - title: Aerodynamics & CFD
+    text: Expertise in fluid dynamics simulations using OpenFoam and Ansys to analyze flow behavior and optimize performance.
+    icon: fa-plane
+  
+  - title: Mechanical Design
+    text: Advanced 3D/2D modeling with SolidWorks, Catia, and Inventor. Experience in finite element analysis (FEA) and prototyping.
+    icon: fa-cogs
+
+  - title: Simulation & Programming
+    text: Proficient in Matlab, Python, and C++ for data analysis, hypothesis validation, and engineering simulations.
+    icon: fa-laptop
+
+# --- SECCIÓ 2: PROJECTES DESTACATS (Portfolio) ---
+portfolio:
+  - title: Airfoil Separation Control
+    subtitle: Research Publication (2025)
+    image: img/portfolio/roundicons.png
+    link: "#"
+    text: "Designed a Hole-Down-Array for airfoil separation control. Published in European Journal of Mechanics / B Fluids."
+
+  - title: RedBull Flug Tag Glider
+    subtitle: Optimization Project (2024)
+    image: img/portfolio/startup-framework.png
+    link: "#"
+    text: "Optimized a glider from theory to wind tunnel testing, designing for efficiency and competition performance."
+
+  - title: Reus Airport Operations
+    subtitle: Operations Redesign (2023)
+    image: img/portfolio/treehouse.png
+    link: "#"
+    text: "Redesign of the Arrivals and Approach Operations in Reus Airport (LERS) to improve air traffic flow."
+
+  - title: Drag Reduction System
+    subtitle: Aerodynamic Study (2022)
+    image: img/portfolio/golden.png
+    link: "#"
+    text: "Study of Air Behavior in a Drag Reduction System. Analysis of airflow and impact on vehicle performance."
+
+# --- SECCIÓ 3: TRAJECTÒRIA (Abans About) ---
+about:
+  - date: 2024 - 2025
+    title: Aerodynamics Researcher
+    subtitle: Catalonia Polytechnic University (UPC)
+    text: "Contributing to engineering research in Basel (Switzerland). Performing CFD simulations and optimizing designs based on simulation outcomes."
+    image: img/about/1.jpg
+  
+  - date: 2021 - 2022
+    title: Mechanical Design Engineer
+    subtitle: Movex Lift
+    text: "Reduced development time through precise 3D modeling. Conducted FEA to validate safety and minimize structural errors."
+    image: img/about/2.jpg
+  
+  - date: 2019 - 2024
+    title: Bachelor in Aerospace Systems
+    subtitle: UPC - Castelldefels
+    text: "Graduated with Honors in Final Thesis. Comprehensive training in aeronautical systems."
+    image: img/about/3.jpg
+  
+  - date: 2025 - Current
+    title: Master's in Space & Aero
+    subtitle: UPC - Terrassa
+    text: "Currently pursuing advanced studies in Space and Aeronautical Engineering."
+    image: img/about/4.jpg
+
+# --- CONTACTE ---
+contact:
+  text: "Looking for new engineering challenges?"
+  email: didacrora@gmail.com
 ---
 
-<div class="home">
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Technical Skills</h2>
+                <h3 class="section-subheading text-muted">Core Competencies</h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            {% for service in page.services %}
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa {{ service.icon }} fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">{{ service.title }}</h4>
+                <p class="text-muted">{{ service.text }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
-  <h1>Posts</h1>
+<section id="portfolio" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Selected Projects</h2>
+                <h3 class="section-subheading text-muted">Research & Engineering</h3>
+            </div>
+        </div>
+        <div class="row">
+            {% for project in page.portfolio %}
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="{{ project.link }}" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="{{ project.image | prepend: site.baseurl }}" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>{{ project.title }}</h4>
+                    <p class="text-muted">{{ project.subtitle }}</p>
+                    <p style="font-size: 0.8em; padding: 0 10px;">{{ project.text }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Experience & Education</h2>
+                <h3 class="section-subheading text-muted">My Professional Path</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="timeline">
+                    {% for event in page.about %}
+                    <li class="{% cycle '', 'timeline-inverted' %}">
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="{{ event.image | prepend: site.baseurl }}" alt="">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>{{ event.date }}</h4>
+                                <h4 class="subheading">{{ event.title }}</h4>
+                                <h6 class="text-muted">{{ event.subtitle }}</h6>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">{{ event.text }}</p>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>Be Part
+                                <br>Of My
+                                <br>Story!</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Contact Me</h2>
+                <h3 class="section-subheading text-muted">{{ page.contact.text }}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                 <a href="mailto:{{ page.contact.email }}" class="btn btn-xl">Send Email</a>
+                 <br><br>
+                 <p style="color:white;">Or find me on LinkedIn</p>
+            </div>
+        </div>
+    </div>
+</section>
